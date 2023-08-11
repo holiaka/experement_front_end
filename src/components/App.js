@@ -1,44 +1,34 @@
-import { useColorMode, useColorModeValue, Button } from '@chakra-ui/react';
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { About } from "./About/About";
 
 
 
 
 
-export const App = () => {  
-  const { colorMode, toggleColorMode } = useColorMode();
-  const color = useColorModeValue('white', 'gray.800');
-
-  console.log(colorMode, toggleColorMode);
-
+export const App = () => {
   return (
-    <>
-      <header>
-        <button onClick={toggleColorMode}>My Button</button>
-        <Button colorScheme="teal" onClick={toggleColorMode}>
-          {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
-        <Button onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
-        <Button bg={color} onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
-      </header>
-      <main>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </main>
-      <footer></footer>
-    </>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101',
+      }}
+    >
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Contacts />}></Route>
+            <Route path="/about" element={<About />}></Route>   
+            <Route path="/registration" element={<RegisterForm />}></Route>
+            <Route path="/login" element={<LogIn />}></Route>
+          </Route>
+        </Routes>
+      </Suspense>       
+      </div>
   );
 }
 
