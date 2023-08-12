@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { About } from "./About/About";
+import {Contacts} from "./Contacts/Contacts"
+import { SharedLayout } from "./SharedLayout/SharedLayout";
 
 
 
