@@ -1,7 +1,9 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { About } from "./About/About";
-import {Contacts} from "./Contacts/Contacts"
+import { Contacts } from "./Contacts/Contacts";
+import { LogInForm } from "./LogInForm/LogInForm";
+import { RegisterForm } from "./RegisterForm/RegisterForm";
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 
 
@@ -26,7 +28,7 @@ export const App = () => {
             <Route index element={<Contacts />}></Route>
             <Route path="/about" element={<About />}></Route>   
             <Route path="/registration" element={<RegisterForm />}></Route>
-            <Route path="/login" element={<LogIn />}></Route>
+            <Route path="/login" element={<LogInForm />}></Route>
           </Route>
         </Routes>
       </Suspense>       

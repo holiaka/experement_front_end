@@ -3,22 +3,21 @@ import * as ReactDOM from 'react-dom/client';
 // import { ColorModeScript } from '@chakra-ui/react';
 
 import { ChakraProvider } from '@chakra-ui/react';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import theme from 'theme/theme';
 
 import './index.css';
 import { App } from './components/App';
 // import reportWebVitals from './reportWebVitals';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-    {/* <BrowserRouter basename="/home"> */}
-    {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
-    <App />
-    {/* </BrowserRouter> */}
+      <BrowserRouter basename="/experement_front_end">
+        {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
+        <App />
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
 );
