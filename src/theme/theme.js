@@ -1,7 +1,6 @@
 // Import `extendTheme` function
 import { extendTheme } from '@chakra-ui/react';
 import { defineStyleConfig } from '@chakra-ui/react';
-console.log("first - ", extendTheme);
 
 const Button = defineStyleConfig({
   // The styles all button have in common
@@ -65,5 +64,5 @@ const styles = {
 
 // Extend the theme
 const theme = extendTheme({ config, components, styles })
-console.log("second - ", theme)
+
 export default theme
