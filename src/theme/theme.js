@@ -1,68 +1,20 @@
 // Import `extendTheme` function
 import { extendTheme } from '@chakra-ui/react';
-import { defineStyleConfig } from '@chakra-ui/react';
+import Button from './components/Button';
+import styles from './styles/global';
 
-const Button = defineStyleConfig({
-  // The styles all button have in common
-  baseStyle: {
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    borderRadius: 'base', // <-- border radius is same for all variants and sizes
-  },
-  // Two sizes: sm and md
-  sizes: {
-    sm: {
-      fontSize: 'sm',
-      px: 4, // <-- px is short for paddingLeft and paddingRight
-      py: 3, // <-- py is short for paddingTop and paddingBottom
-    },
-    md: {
-      fontSize: 'md',
-      px: 6, // <-- these values are tokens from the design system
-      py: 4, // <-- these values are tokens from the design system
-    },
-  },
-  // Two variants: outline and solid
-  variants: {
-    outline: {
-      border: '2px solid',
-      borderColor: 'purple.500',
-      color: 'purple.500',
-    },
-    solid: {
-      bg: 'purple.500',
-      color: 'white',
-    },
-  },
-  // The default size and variant values
-  defaultProps: {
-    size: 'md',
-    variant: 'outline',
-  },
-})
 
 // Add your color mode config
 const config = {
   initialColorMode: 'light',
-  useSystemColorMode: false,  
-}
+  useSystemColorMode: false,
+};
 
-const components =  {
-    Button,
-  }
-const styles = {
-    global: {
-      // styles for the `a`
-      a: {
-        color: 'teal.500',
-        _hover: {
-          textDecoration: 'underline',
-        },
-      },
-    },
-  }
+const components = {
+  Button,
+};
 
 // Extend the theme
-const theme = extendTheme({ config, components, styles })
+const theme = extendTheme({ config, components, styles });
 
-export default theme
+export default theme;
