@@ -22,6 +22,22 @@ export const Navigation = styled.div`
 
 `;
 
+export const Footer = styled.footer`
+font-size: 18px;
+
+padding: 40px;
+
+display: flex;
+justify-content: space-between;
+gap: 200px;
+`;
+
 export const Side = styled.div`
 
+`;
+
+export const FooterInfo = styled.p`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
 `;
